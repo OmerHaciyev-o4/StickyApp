@@ -1,0 +1,31 @@
+.customStyle{
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    box-shadow: 2px 2px 2px black;
+    padding: 0;
+}
+
+.col-md-12 > *{
+    border: 0;
+    margin-left: 0;
+    outline: none;
+}
+
+.col-md-12 > input[type="text"]{
+    border-radius: 10px 10px 0 0;
+}
+
+.iconStyle{
+    font-size: 18px !important;
+}
+
+#listt{
+    list-style: none;
+}
+
+#listt > li > i{
+    position: absolute !important;
+    top: 0;
+    right: 0;
+
+}

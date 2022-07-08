@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <app-take-note (stickyEvent)="getStikys()" [sticky]="sticky"></app-take-note>
+    <div class="container pt-3">
+        <div class="d-flex flex-row flex-nowrap">
+            <div class="card me-4 rounded-2" style="width: 18rem;" *ngFor="let sticky of stickys">
+                <div class="card-body" [style.background-color]="sticky.colorCode">
+                    <h5 class="card-title">{{sticky.title}}</h5>
+                    <div class="w-100" *ngIf="!sticky.content">
+                        <ul class="list-unstyled">
+                            <li *ngFor="let item of sticky.listItems">
+                                <input type="checkbox" name="{{item.id}}" id="{{item.id}}">
+                                <label class="ms-2 user-select-none" for="{{item.id}}">{{item.content}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <p class="card-text" *ngIf="sticky.content">{{sticky.content}}</p>
+                    <div class="card-footer">
+                        <i class="fas fa-pen me-3 pointer" (click)="createNewSticky(sticky)"></i>
+                        <i class="fas fa-trash-alt pointer" (click)="deleteSticky(sticky)"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
